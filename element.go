@@ -1,6 +1,7 @@
 package wvparser
 
 import (
+	"golang.org/x/xerrors"
 	"strconv"
 	"strings"
 )
@@ -13,7 +14,6 @@ type (
 	TextElement string
 )
 
-
 // ElementParse は文字列から名前とKey-Value-Pairを取り出しElementで返す
 // returns: Element, error
 func (te TextElement) ElementParse() (Element, error) {
@@ -23,25 +23,29 @@ func (te TextElement) ElementParse() (Element, error) {
 	// key2 , value2
 	// ...
 
+
 	lines := strings.Split(string(te), "\n")
 	var rt Element
-	rt.Values=make(map[float64]float64)
-	for i,v := range lines {
-		if i==0 {
-			rt.Name=strings.Trim(v,"# ")
+	rt.Values = make(map[float64]float64)
+	for i, v := range lines {
+		if len(v) == 0 {
+			continue
+		}
+		if i == 0 {
+			rt.Name = strings.Trim(v, "# ")
 		} else {
-			kv := strings.Split(strings.ReplaceAll(v," ",""), ",")
-			key,err := strconv.ParseFloat(kv[0],64)
+			kv := strings.Split(strings.ReplaceAll(v, " ", ""), ",")
+			key, err := strconv.ParseFloat(kv[0], 64)
 			if err != nil {
-				return rt, err
+				return rt, xerrors.Errorf(": %w", err)
 			}
 
-			value,err := strconv.ParseFloat(kv[1],64)
+			value, err := strconv.ParseFloat(kv[1], 64)
 			if err != nil {
-				return rt, err
+				return rt, xerrors.Errorf(": %w", err)
 			}
 
-			rt.Values[key]=value
+			rt.Values[key] = value
 		}
 	}
 

@@ -23,5 +23,5 @@ func TestTextElement_ElementParse(t *testing.T) {
 	actual, err := te.ElementParse()
 
 	assert.NoError(t, err)
-	assert.Equal(t, expect,actual)
+	assert.Equal(t, expect, actual)
 }
