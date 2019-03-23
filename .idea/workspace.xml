@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3121a502-18e8-46f2-9e25-9aca156a3cb2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/count.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/count_test.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/element.go" beforeDir="false" afterPath="$PROJECT_DIR$/element.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/element_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/element_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser.go" beforeDir="false" afterPath="$PROJECT_DIR$/parser.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parser_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/parser_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reader.go" beforeDir="false" afterPath="$PROJECT_DIR$/reader.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/SEED00001.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test/target.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +28,17 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/count_test.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="884">
+              <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -217,6 +219,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-32" width="1920" height="1072" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -252,17 +255,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/valuepair.go" />
     <entry file="file://$PROJECT_DIR$/test/target.csv">
-      <provider editor-type-id="text-editor" />
       <provider selected="true" editor-type-id="csv-text-editor" />
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/target.csv">
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-      <provider selected="true" editor-type-id="csv-text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/reader.go">
       <provider selected="true" editor-type-id="text-editor">
@@ -308,8 +304,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/count_test.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1092">
-          <caret line="47" column="41" selection-start-line="47" selection-start-column="41" selection-end-line="47" selection-end-column="41" />
+        <state relative-caret-position="884">
+          <caret line="48" column="39" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
         </state>
       </provider>
     </entry>

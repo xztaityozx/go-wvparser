@@ -1,11 +1,12 @@
 package wvparser
 
 import (
-	"golang.org/x/xerrors"
-	"gonum.org/v1/gonum/unit"
 	"log"
 	"strconv"
 	"strings"
+
+	"golang.org/x/xerrors"
+	"gonum.org/v1/gonum/unit"
 )
 
 type Counter struct {
@@ -93,35 +94,12 @@ func ToFloat64(value string) float64 {
 func (c Counter) Aggregate(csv WVCsv) int64 {
 	var rt int64 = 0
 
-	f := func(k float64, y float64) bool {
-		s := c.Filters[k]
-		box := strings.Split(s, ":")
-
-		x := ToFloat64(box[1])
-
-		if box[0] == "<=" {
-			return y <= x
-		} else if box[0] == "<" {
-			return y < x
-		} else if box[0] == ">=" {
-			return y >= x
-		} else if box[0] == ">" {
-			return y > x
-		} else if box[0] == "==" {
-			return y == x
-		} else if box[0] == "!=" {
-			return y != x
-		} else {
-			return false
-		}
+	l, e := c.GetStatuses(csv)
+	if e != nil {
+		log.Fatal(e)
 	}
-
-	for _, v := range csv.Data {
-		status := true
-		for k := range c.Filters {
-			status = status && f(k, v.Values[k])
-		}
-		if status {
+	for _, v := range l {
+		if v {
 			rt++
 		}
 	}
