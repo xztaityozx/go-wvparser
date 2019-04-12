@@ -1,9 +1,10 @@
 package wvparser
 
 import (
-	"golang.org/x/xerrors"
 	"strconv"
 	"strings"
+
+	"golang.org/x/xerrors"
 )
 
 type (
@@ -23,7 +24,6 @@ func (te TextElement) ElementParse() (Element, error) {
 	// key2 , value2
 	// ...
 
-
 	lines := strings.Split(string(te), "\n")
 	var rt Element
 	rt.Values = make(map[float64]float64)
@@ -34,7 +34,7 @@ func (te TextElement) ElementParse() (Element, error) {
 		if i == 0 {
 			rt.Name = strings.Trim(v, "# ")
 		} else {
-			kv := strings.Split(strings.ReplaceAll(v, " ", ""), ",")
+			kv := strings.Split(strings.Replace(v, " ", "", -1), ",")
 			key, err := strconv.ParseFloat(kv[0], 64)
 			if err != nil {
 				return rt, xerrors.Errorf(": %w", err)
